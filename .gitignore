@@ -1,0 +1,24 @@
+# Compilação Java (Arquivos gerados pelo compilador)
+*.class
+*.jar
+*.war
+*.ear
+
+# Pastas de Build e Saída
+bin/
+out/
+target/
+
+# VS Code (Configurações locais do seu editor)
+.vscode/
+*.code-workspace
+
+# Ferramentas de Backup (Como o seu FreeFileSync)
+sync.ffs_db
+sync.ffs_dbS
+
+# Arquivos Temporários e do Sistema
+Thumbs.db
+.DS_Store
+*.tmp
+*.bak
