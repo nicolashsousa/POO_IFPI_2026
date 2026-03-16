@@ -1,19 +1,6 @@
 package Aula_1;
 
 import java.util.Scanner;
-
-//Imagine que você foi contratado para desenvolver o módulo de inteligência de um caixa
-//eletrônico. O objetivo é otimizar o estoque de cédulas, entregando ao cliente a menor
-//quantidade possível de notas para um determinado valor de saque.
-//Cédulas Disponíveis:
-//O caixa possui notas de: R$ 100, R$ 50, R$ 20, R$ 10, R$ 5, R$ 2 e R$ 1.
-//Requisitos do Programa:
-//Entrada: Um valor inteiro representando o total a ser sacado.
-//Processamento: O programa deve priorizar sempre as notas de maior valor antes de passar para
-//as menores.
-//Saída: A quantidade de cada nota utilizada. Notas que não forem utilizadas (quantidade zero)
-//não precisam ser exibidas (opcional).
-
 public class Cedula {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
@@ -37,8 +24,7 @@ public class Cedula {
         valor = valor % 5;
 
         int notas2 = valor / 2;
-        int notas1 = valor % 2; // O que sobrar depois de dividir por 2 são as moedas/notas de 1
-
+        int notas1 = valor % 2;
         if (notas100 > 0) System.out.println(notas100 + " nota(s) de R$ 100");
         if (notas50 > 0) System.out.println(notas50 + " nota(s) de R$ 50");
         if (notas20 > 0) System.out.println(notas20 + " nota(s) de R$ 20");
