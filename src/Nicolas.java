@@ -1,4 +1,4 @@
-package Aula_1;
+
 //Classe Bem vindo
 public class Nicolas {
     //Metodo Main
