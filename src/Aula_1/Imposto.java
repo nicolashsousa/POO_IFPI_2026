@@ -7,7 +7,7 @@ public class Imposto {
         double salario, imposto;
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Digite o salario");
+        System.out.println("Digite o salario:");
         salario = entrada.nextDouble();
 
         imposto = salario*0.1;

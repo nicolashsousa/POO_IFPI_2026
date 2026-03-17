@@ -17,7 +17,7 @@ public class Tempo {
         double minutos = (tempo - horas) * 60;
         int minuto = (int) minutos;
         int segundos = (int) ((minutos - minuto) * 60);
-        System.out.println("Tempo: " + horas + "hr " + minuto + "min " + segundos + "s");
+        System.out.println("Tempo: " + horas + " hr " + minuto + " min " + segundos + " s");
 
         entrada.close();
     }

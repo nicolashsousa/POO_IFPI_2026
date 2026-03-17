@@ -7,7 +7,7 @@ public class Salario_liquido {
         double salario, salario_liquido, imposto;
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Digite o salario");
+        System.out.println("Digite o salario:");
         salario = entrada.nextDouble();
 
         imposto = salario*0.1;

@@ -10,7 +10,7 @@ public class Retangulo {
         System.out.println("Digite a base:");
         base = entrada.nextDouble();
 
-        System.out.println("Digite a altura");
+        System.out.println("Digite a altura:");
         altura = entrada.nextDouble();
 
         area = altura*base;
