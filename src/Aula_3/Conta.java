@@ -9,7 +9,7 @@ public class Conta {
     }
 
     public void sacar(double valor){
-        saldo-=valor;
+        saldo -= valor;
     }
 
     public double getSaldo(){

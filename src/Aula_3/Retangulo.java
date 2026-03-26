@@ -1,8 +1,7 @@
 package Aula_3;
 
 public class Retangulo {
-    private double altura;
-    private double largura;
+    private double altura,largura;
 
     public void setAtributos(double a, double l){
         this.altura = a;
