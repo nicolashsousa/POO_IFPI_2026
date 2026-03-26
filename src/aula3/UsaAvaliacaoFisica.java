@@ -1,4 +1,4 @@
-package Aula_3.Exemplos;
+package aula3;
 
 public class UsaAvaliacaoFisica {
     public static void main(String[] args) {

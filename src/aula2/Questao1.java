@@ -1,4 +1,4 @@
-package Aula_2;
+package aula2;
 
 import java.awt.Rectangle;
 

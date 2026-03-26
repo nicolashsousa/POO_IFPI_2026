@@ -1,10 +1,10 @@
-package Aula_1;
+package aula1;
 
 import java.util.Scanner;
-
-public class Retangulo {
+//Questão1
+public class Area_triangulo {
     public static void main(String[] args){
-        double altura, base, area, perimetro;
+        double altura, base, area;
         Scanner entrada = new Scanner(System.in);
 
         System.out.println("Digite a base:");
@@ -13,12 +13,9 @@ public class Retangulo {
         System.out.println("Digite a altura:");
         altura = entrada.nextDouble();
 
-        area = altura*base;
+        area = (altura*base)/2;
         System.out.println("Area = " + area);
-
-        perimetro =(2*altura)+(2*base);
-        System.out.println("Perimetro = " + perimetro);
-
+        
         entrada.close();
     }
 }
