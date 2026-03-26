@@ -1,4 +1,4 @@
-package Aula_3;
+package Aula_3.Exemplos;
 
 public class AvaliacaoFisica {
     private double altura, peso;

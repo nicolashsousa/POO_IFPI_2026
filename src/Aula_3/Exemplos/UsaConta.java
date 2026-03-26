@@ -1,4 +1,4 @@
-package Aula_3;
+package Aula_3.Exemplos;
 
 public class UsaConta {
     public static void main(String[] args) {
