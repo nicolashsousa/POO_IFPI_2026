@@ -1,15 +1,18 @@
-package aula3;
+package aula3.Questao4;
 
 public class AvaliacaoFisica {
     private double altura, peso;
 
-    public void setAtributos(double a,double p){
+    public void setAltura(double a){
         this.altura = a;
-        this.peso = p;
     }
 
     public double getAltura(){
         return altura;
+    }
+
+    public void setPeso(double p){
+        this.peso = p;
     }
 
     public double getPeso(){
