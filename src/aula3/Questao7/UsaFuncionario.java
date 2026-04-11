@@ -19,6 +19,8 @@ public class UsaFuncionario {
         double salario = ciclano.calcularSalarioBruto();
 
         System.out.println("\nSalario = "+salario+" R$");
+        System.out.println("Valor da hora trabalhada = "+valorHora+" R$");
+        System.out.println("Horas trabalhadas = "+horasTrabalhadas);
         entrada.close();
     }
 }

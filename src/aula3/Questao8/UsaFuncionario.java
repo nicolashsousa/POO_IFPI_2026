@@ -24,6 +24,9 @@ public class UsaFuncionario {
         double salarioLiquido = ciclano.calcularSalarioLiquido();
 
         System.out.println("\nSalario = "+salario+" R$");
+        System.out.println("Valor da hora trabalhada = "+valorHora+" R$");
+        System.out.println("Horas trabalhadas = "+horasTrabalhadas);
+        System.out.println("Aliquota = "+aliquota);
         System.out.println("Imposto = "+imposto+" R$");
         System.out.println("Salario Líquido = "+salarioLiquido+" R$");
         entrada.close();

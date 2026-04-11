@@ -7,7 +7,6 @@ public class UsaRetangulo {
         Retangulo meuRetangulo = new Retangulo();
         Scanner entrada = new Scanner(System.in);
         double altura,largura;
-        int valorMetro;
 
         System.out.println("Digite a altura: ");
         meuRetangulo.setAltura(entrada.nextDouble());
@@ -19,7 +18,7 @@ public class UsaRetangulo {
 
         System.out.println("Digite o valor do m²: ");
         meuRetangulo.setValorMetro(entrada.nextInt());
-        valorMetro = meuRetangulo.getValorMetro();
+        int valorMetro = meuRetangulo.getValorMetro();
 
         double area = meuRetangulo.calcularArea();
         double valor = meuRetangulo.calcularValorLote();
@@ -27,6 +26,7 @@ public class UsaRetangulo {
         System.out.println("\nRetângulo");
         System.out.println("Altura = "+altura+" m");
         System.out.println("Largura = "+largura+" m");
+        System.out.println("Valor do metro = "+valorMetro);
         System.out.println("Area = "+area+" m²");
         System.out.println("Valor total = "+valor+" R$");
 
