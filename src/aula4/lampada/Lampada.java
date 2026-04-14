@@ -1,10 +1,10 @@
-package aula4;
+package aula4.lampada;
 
 public class Lampada {
     private boolean estadoDaLampada;
 
-    public Lampada(){
-        this.estadoDaLampada = true;
+    public Lampada(boolean valor){
+        this.estadoDaLampada = valor;
     }
 
     public void acender(){
