@@ -12,6 +12,7 @@ target/
 # VS Code (Configurações locais do seu editor)
 .vscode/
 *.code-workspace
+.idea/
 
 # Ferramentas de Backup (Como o seu FreeFileSync)
 sync.ffs_db
