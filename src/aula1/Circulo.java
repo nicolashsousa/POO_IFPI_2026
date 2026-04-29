@@ -8,7 +8,7 @@ public class Circulo {
         double pi = 3.14;
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Digite o raio:");
+        System.out.print("Digite o raio: ");
         raio = entrada.nextDouble();
 
         area = pi*raio*raio;

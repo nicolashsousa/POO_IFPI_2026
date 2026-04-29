@@ -11,13 +11,13 @@ public class Questao11 {
         int minaX, minaY, comprimentoMina, larguraMina;
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Coordenada X inicial:");
+        System.out.print("Coordenada X inicial: ");
         minaX = entrada.nextInt();
-        System.out.println("Coordenada Y inicial:");
+        System.out.print("Coordenada Y inicial: ");
         minaY = entrada.nextInt();
-        System.out.println("Comprimento da mina:");
+        System.out.print("Comprimento da mina: ");
         comprimentoMina = entrada.nextInt();
-        System.out.println("Largura da mina:");
+        System.out.print("Largura da mina: ");
         larguraMina = entrada.nextInt();
 
         Rectangle minaDeFerro = new Rectangle(minaX, minaY, larguraMina, comprimentoMina);
@@ -46,7 +46,7 @@ public class Questao11 {
         int ano = novaData.getYear();
 
         //5. Exiba um relatório completo com Protocolo, Validade e Proprietários atingidos.
-        System.out.println("\nProtocolo de Registro: #"+numeroProtocolo);
+        System.out.println("\nProtocolo de registro: #"+numeroProtocolo);
         System.out.println("Data de emissão: "+data.getDayOfMonth()+"/"+data.getMonthValue()+"/"+data.getYear());
         System.out.println("Data de validade: "+dia+"/"+mes+"/"+ano);
         System.out.println("\nPROPRIETÁRIOS AFETADOS PELA MINA:");

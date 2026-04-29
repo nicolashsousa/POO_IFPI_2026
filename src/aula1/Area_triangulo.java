@@ -7,10 +7,10 @@ public class Area_triangulo {
         double altura, base, area;
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Digite a base:");
+        System.out.print("Digite a base: ");
         base = entrada.nextDouble();
 
-        System.out.println("Digite a altura:");
+        System.out.print("Digite a altura: ");
         altura = entrada.nextDouble();
 
         area = (altura*base)/2;

@@ -7,10 +7,10 @@ public class Velocidade {
         double distancia, velocidade, tempo;
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Digite a distancia:");
+        System.out.print("Digite a distancia: ");
         distancia = entrada.nextDouble();
 
-        System.out.println("Digite a velocidade:");
+        System.out.print("Digite a velocidade: ");
         velocidade = entrada.nextDouble();
 
         tempo = distancia/velocidade;

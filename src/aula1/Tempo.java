@@ -7,9 +7,9 @@ public class Tempo {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Digite sua distância: ");
+        System.out.print("Digite sua distância: ");
         double distancia = entrada.nextDouble();
-        System.out.println("Digite sua velocidade: ");
+        System.out.print("Digite sua velocidade: ");
         double velocidade = entrada.nextDouble();
         
         double tempo = (distancia / velocidade);

@@ -13,9 +13,9 @@ public class Questao2 {
 
         Scanner entrada =  new Scanner(System.in);
 
-        System.out.println("Digite o ponto X:");
+        System.out.print("Digite o ponto X: ");
         pocoX = entrada.nextInt();
-        System.out.println("Digite o ponto Y");
+        System.out.print("Digite o ponto Y: ");
         pocoY = entrada.nextInt();
 
         boolean filho1 = lote1.contains(pocoX,pocoY);

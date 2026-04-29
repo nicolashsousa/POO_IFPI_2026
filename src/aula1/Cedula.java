@@ -5,7 +5,7 @@ public class Cedula {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Digite o valor a ser sacado:");
+        System.out.print("Digite o valor a ser sacado: ");
         int valor = entrada.nextInt();
 
         int notas100 = valor / 100;

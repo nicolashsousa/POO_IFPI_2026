@@ -7,6 +7,6 @@ public class TesteConta {
         p1.depositar(1000);
         p1.sacar(450);
 
-        System.out.println(p1.toString());
+        System.out.println(p1);
     }
 }

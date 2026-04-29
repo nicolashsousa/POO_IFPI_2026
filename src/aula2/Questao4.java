@@ -14,13 +14,13 @@ public class Questao4 {
 
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Digite o eixo X:");
+        System.out.print("Digite o eixo X: ");
         minaX = entrada.nextInt();
-        System.out.println("Digite o eixo Y:");
+        System.out.print("Digite o eixo Y: ");
         minaY = entrada.nextInt();
-        System.out.println("Digite a altura:");
+        System.out.print("Digite a altura: ");
         alturaMina = entrada.nextInt();
-        System.out.println("Digite a largura:");
+        System.out.print("Digite a largura: ");
         larguraMina = entrada.nextInt();
 
         Rectangle minaDeFerro = new Rectangle(minaX, minaY, larguraMina, alturaMina);

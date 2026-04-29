@@ -7,7 +7,7 @@ public class Conversao_temperatura {
         double celsius, fahrenheit, kelvin;
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Digite a temperatura em Graus Celsius:");
+        System.out.print("Digite a temperatura em Graus Celsius: ");
         celsius = entrada.nextDouble();
 
         System.out.println("Celsius = " + celsius);

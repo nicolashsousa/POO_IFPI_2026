@@ -9,7 +9,7 @@ public class Questao7 {
         LocalDate data = LocalDate.now();
 
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite o numero de dias a ser somado:");
+        System.out.print("Digite o numero de dias a ser somado: ");
         soma = entrada.nextInt();
         LocalDate novaData = data.plusDays(soma);
 

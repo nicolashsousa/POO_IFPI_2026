@@ -8,11 +8,11 @@ public class UsaRetangulo {
         Scanner entrada = new Scanner(System.in);
         double altura,largura;
 
-        System.out.println("Digite a altura: ");
+        System.out.print("Digite a altura: ");
         meuRetangulo.setAltura(entrada.nextDouble());
         altura = meuRetangulo.getAltura();
 
-        System.out.println("Digite a largura: ");
+        System.out.print("Digite a largura: ");
         meuRetangulo.setLargura(entrada.nextDouble());
         largura = meuRetangulo.getLargura();
 
