@@ -13,6 +13,7 @@ target/
 .vscode/
 *.code-workspace
 .idea/
+*.iml
 
 # Ferramentas de Backup (Como o seu FreeFileSync)
 sync.ffs_db
