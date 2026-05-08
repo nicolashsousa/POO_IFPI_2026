@@ -6,7 +6,7 @@ public class ContaBancaria {
     private double saldo;
 
     /**
-     *
+     * Construtor que inicializa uma conta com saldo 0.
      * @param t Titular a ser cadastrado.
      * @param n Número da conta.
      */

@@ -6,7 +6,7 @@ public class Retangulo {
 
     /**
      *
-     * @param a Altura a ser passada.
+     * @param a Altura do retângulo.
      */
     public void setAltura(double a){
         this.altura = a;
@@ -22,7 +22,7 @@ public class Retangulo {
 
     /**
      *
-     * @param l Largura a ser passada.
+     * @param l Largura do retângulo.
      */
     public void setLargura(double l){
         this.largura = l;
@@ -38,7 +38,7 @@ public class Retangulo {
 
     /**
      *
-     * @param v Valor do m² a ser passado.
+     * @param v Valor do m² em reais.
      */
     public void setValorMetro(int v){
         this.valorMetro = v;
