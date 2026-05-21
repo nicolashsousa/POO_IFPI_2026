@@ -9,13 +9,13 @@ import javax.swing.JButton;
 public class Teste {
     public static void main(String[] args) {
         JFrame meuFrame = new JFrame();
-        
+
         meuFrame.setTitle("Calculadora de média");
-        meuFrame.setSize(200,200);
+        meuFrame.setSize(250,400);
         meuFrame.setLayout(null);
         meuFrame.setLayout(new FlowLayout());
 
-        JLabel matricuLabel = new JLabel("Matricula: ");
+        JLabel matriculaLabel = new JLabel("Matricula: ");
         JTextField matriculaField = new JTextField(15);
 
         JLabel notaLabel = new JLabel("Media: ");
@@ -27,7 +27,7 @@ public class Teste {
         JButton cancelarButton = new JButton();
         cancelarButton.setText("Cancelar");
 
-        meuFrame.add(matricuLabel);
+        meuFrame.add(matriculaLabel);
         meuFrame.add(matriculaField);
 
         meuFrame.add(notaLabel);
