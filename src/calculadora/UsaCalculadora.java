@@ -29,6 +29,7 @@ public class UsaCalculadora {
             case "/": System.out.println("Resultado = "+Calculadora.divisao(a, b));break;
             default: System.out.println("Operação Invalida");
         }
+
         scan.close();
     }
 }
