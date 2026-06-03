@@ -2,11 +2,14 @@ package aula10;
 
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class MeuFrame extends JFrame {
     JLabel pesoLabel = new JLabel("Peso");
@@ -22,6 +25,30 @@ public class MeuFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridBagLayout());
         adicionarComponentes();
+        setLocationRelativeTo(null);
+        calcularButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcular();
+            }
+        });
+        limparButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                limpar();
+            }
+        });
+    }
+
+    public void calcular(){
+        double peso = Double.parseDouble(pesoField.getText());
+        double altura = Double.parseDouble(alturaField.getText());
+        double imc = peso/(altura*altura);
+        JOptionPane.showMessageDialog(null, "IMC = "+imc);
+    }
+    public void limpar(){
+        pesoField.setText("");
+        alturaField.setText("");
     }
 
     public void adicionarComponentes(){
