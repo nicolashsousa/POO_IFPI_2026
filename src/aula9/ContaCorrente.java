@@ -25,6 +25,10 @@ public class ContaCorrente extends Conta{
         setSaldo(novoSaldo);
     }
 
+    /**
+     * O método toString retorna uma 'String' formatada com os dados da conta.
+     * @return 'String' formatada com os dados da conta.
+     */
     @Override
     public String toString(){
         return super.toString() + "Taxa de manutenção: " + taxaDeManutencao + "\n";

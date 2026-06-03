@@ -25,6 +25,10 @@ public class ContaPoupanca extends Conta{
         depositar(valor);
     }
 
+    /**
+     * O método toString retorna uma 'String' formatada com os dados da conta.
+     * @return 'String' formatada com os dados da conta.
+     */
     @Override
     public String toString(){
         return super.toString() + "Índice de rendimento: " + indiceRendimento + "\n";

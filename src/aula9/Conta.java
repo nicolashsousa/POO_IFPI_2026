@@ -49,6 +49,10 @@ public class Conta {
         this.saldo -= valor;
     }
 
+    /**
+     * O método toString retorna uma 'String' formatada com os dados da conta.
+     * @return 'String' formatada com os dados da conta.
+     */
     @Override
     public String toString(){
         return "Conta: " + numero + "\nSaldo: " + saldo + "\n";
