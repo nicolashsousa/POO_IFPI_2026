@@ -52,30 +52,30 @@ public class MeuFrame extends JFrame {
     }
 
     public void adicionarComponentes(){
-        GridBagConstraints c = new GridBagConstraints();
+        GridBagConstraints c1 = new GridBagConstraints();
 
-        c.gridx = 0;
-        c.gridy = 0;
-        add(pesoLabel, c);
+        c1.gridx = 0;
+        c1.gridy = 0;
+        add(pesoLabel, c1);
 
-        c.gridx = 1;
-        c.gridy = 0;
-        add(pesoField, c);
+        c1.gridx = 1;
+        c1.gridy = 0;
+        add(pesoField, c1);
 
-        c.gridx = 0;
-        c.gridy = 1;
-        add(alturaLabel, c);
+        c1.gridx = 0;
+        c1.gridy = 1;
+        add(alturaLabel, c1);
 
-        c.gridx = 1;
-        c.gridy = 1;
-        add(alturaField, c);
+        c1.gridx = 1;
+        c1.gridy = 1;
+        add(alturaField, c1);
 
-        c.gridx = 0;
-        c.gridy = 2;
-        add(calcularButton, c);
+        c1.gridx = 0;
+        c1.gridy = 2;
+        add(calcularButton, c1);
 
-        c.gridx = 1;
-        c.gridy = 2;
-        add(limparButton, c);
+        c1.gridx = 1;
+        c1.gridy = 2;
+        add(limparButton, c1);
     }
 }
