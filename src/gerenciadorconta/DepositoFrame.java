@@ -5,7 +5,11 @@ import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 public class DepositoFrame extends JFrame {
     private final ContaBancaria contaVinculada;
@@ -16,9 +20,9 @@ public class DepositoFrame extends JFrame {
     JButton cancelButton = new JButton("Cancelar");
 
     public DepositoFrame(String titulo, ContaBancaria conta){
+        super(titulo);
         this.contaVinculada = conta;
 
-        super(titulo);
         setSize(250, 150);
         setLayout(new GridBagLayout());
         adicionarComponentes();
@@ -33,6 +37,7 @@ public class DepositoFrame extends JFrame {
 
                     JOptionPane.showMessageDialog(null,
                             "Depósito de "+valor+" R$ realizado com sucesso!");
+                    depositoField.setText("");
                     dispose();
                 } catch (NumberFormatException ex){
                     JOptionPane.showMessageDialog(null,
@@ -40,29 +45,29 @@ public class DepositoFrame extends JFrame {
                 }
             }
         });
+
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     public void adicionarComponentes(){
-        GridBagConstraints c = new GridBagConstraints();
+        GridBagConstraints cD = new GridBagConstraints();
 
-        c.gridx = 0;
-        c.gridy = 1;
-        add(depositoLabel, c);
+        cD.gridx = 0;
+        cD.gridy = 1;
+        add(depositoLabel, cD);
 
-        c.gridx = 1;
-        c.gridy = 1;
-        add(depositoField, c);
+        cD.gridx = 1;
+        cD.gridy = 1;
+        add(depositoField, cD);
 
-        c.gridx = 0;
-        c.gridy = 2;
-        add(okButton, c);
-        okButton.addActionListener(e -> dispose());
+        cD.gridx = 0;
+        cD.gridy = 2;
+        add(okButton, cD);
 
-        c.gridx = 1;
-        c.gridy = 2;
-        add(cancelButton, c);
+        cD.gridx = 1;
+        cD.gridy = 2;
+        add(cancelButton, cD);
         cancelButton.addActionListener(e -> dispose());
     }
 }

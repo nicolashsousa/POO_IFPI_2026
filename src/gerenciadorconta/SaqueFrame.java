@@ -2,40 +2,65 @@ package gerenciadorconta;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class SaqueFrame extends JFrame {
+    private final ContaBancaria contaVinculada;
     JLabel saqueLabel = new JLabel("Digite o valor:");
     JTextField saqueField = new JTextField(10);
     JButton okButton = new JButton("OK");
     JButton cancelButton = new JButton("Cancelar");
 
-    public SaqueFrame(String titulo){
+    public SaqueFrame(String titulo, ContaBancaria conta){
         super(titulo);
+        this.contaVinculada = conta;
+
         setSize(250, 250);
         setLayout(new GridBagLayout());
         adicionarComponentes();
+
+        okButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    double valor = Double.parseDouble(saqueField.getText());
+
+                    contaVinculada.sacar(valor);
+
+                    JOptionPane.showMessageDialog(null,
+                            "Saque de "+valor+" R$ realizado com sucesso!");
+                    saqueField.setText("");
+                    dispose();
+                } catch (NumberFormatException ex){
+                    JOptionPane.showMessageDialog(null,
+                            "Por favor, digite apenas números.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     public void adicionarComponentes(){
-        GridBagConstraints c = new GridBagConstraints();
+        GridBagConstraints cQ = new GridBagConstraints();
 
-        c.gridx = 0;
-        c.gridy = 1;
-        add(saqueLabel, c);
+        cQ.gridx = 0;
+        cQ.gridy = 1;
+        add(saqueLabel, cQ);
 
-        c.gridx = 1;
-        c.gridy = 1;
-        add(saqueField, c);
+        cQ.gridx = 1;
+        cQ.gridy = 1;
+        add(saqueField, cQ);
 
-        c.gridx = 0;
-        c.gridy = 2;
-        add(okButton, c);
+        cQ.gridx = 0;
+        cQ.gridy = 2;
+        add(okButton, cQ);
         okButton.addActionListener(e -> dispose());
 
-        c.gridx = 1;
-        c.gridy = 2;
-        add(cancelButton, c);
+        cQ.gridx = 1;
+        cQ.gridy = 2;
+        add(cancelButton, cQ);
+        cancelButton.addActionListener(e -> dispose());
     }
 }

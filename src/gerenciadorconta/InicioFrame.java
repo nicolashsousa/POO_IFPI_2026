@@ -14,10 +14,6 @@ public class InicioFrame extends JFrame {
     JButton depositoButton = new JButton("Deposito");
     JButton sacarButton = new JButton("Sacar");
 
-    SaldoFrame saldoFrame = new SaldoFrame("Saldo", minhaConta);
-    DepositoFrame depositoFrame = new DepositoFrame("Depositar", minhaConta);
-    SaqueFrame saqueFrame = new SaqueFrame("Sacar");
-
     JLabel saldoLabel = new JLabel();
     JLabel depositoLabel = new JLabel();
     JLabel sacarLabel = new JLabel();
@@ -28,41 +24,50 @@ public class InicioFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridBagLayout());
         adicionarComponentes();
-        setLocationRelativeTo(null);
 
+        saldoButton.addActionListener(e -> {
+            SaldoFrame saldoFrame = new SaldoFrame("Saldo", minhaConta);
+            saldoFrame.setVisible(true);
+        });
+
+        depositoButton.addActionListener(e -> {
+            DepositoFrame depositoFrame = new DepositoFrame("Deposito", minhaConta);
+            depositoFrame.setVisible(true);
+        });
+
+        sacarButton.addActionListener(e -> {
+            SaqueFrame saqueFrame = new SaqueFrame("Sacar", minhaConta);
+            saqueFrame.setVisible(true);
+        });
+
+        setLocationRelativeTo(null);
     }
 
     public void adicionarComponentes(){
-        GridBagConstraints c = new GridBagConstraints();
+        GridBagConstraints cF = new GridBagConstraints();
 
-        c.gridx = 0;
-        c.gridy = 1;
-        add(saldoLabel, c);
+        cF.gridx = 0;
+        cF.gridy = 1;
+        add(saldoLabel, cF);
 
-        c.gridx = 1;
-        c.gridy = 1;
-        add(saldoButton, c);
+        cF.gridx = 1;
+        cF.gridy = 1;
+        add(saldoButton, cF);
 
-        c.gridx = 0;
-        c.gridy = 2;
-        add(depositoLabel, c);
+        cF.gridx = 0;
+        cF.gridy = 2;
+        add(depositoLabel, cF);
 
-        c.gridx = 1;
-        c.gridy = 2;
-        add(depositoButton, c);
+        cF.gridx = 1;
+        cF.gridy = 2;
+        add(depositoButton, cF);
 
-        c.gridx = 0;
-        c.gridy = 3;
-        add(sacarLabel, c);
+        cF.gridx = 0;
+        cF.gridy = 3;
+        add(sacarLabel, cF);
 
-        c.gridx = 1;
-        c.gridy = 3;
-        add(sacarButton, c);
-
-        saldoButton.addActionListener(e -> saldoFrame.setVisible(true));
-
-        depositoButton.addActionListener(e -> depositoFrame.setVisible(true));
-
-        sacarButton.addActionListener(e -> saqueFrame.setVisible(true));
+        cF.gridx = 1;
+        cF.gridy = 3;
+        add(sacarButton, cF);
     }
 }

@@ -8,12 +8,16 @@ public class ContaBancaria {
     }
 
     public double getSaldo() {
-        return saldo;
+        return this.saldo;
+    }
+
+    public void setSaldo(double valor) {
+        this.saldo = valor;
     }
 
     public void depositar(double valor) {
         if (valor > 0) {
-            this.saldo += valor;
+            setSaldo(getSaldo() + valor);
         }
     }
 
