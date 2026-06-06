@@ -2,28 +2,35 @@ package gerenciadorconta;
 
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import java.awt.Font;
 
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.BorderFactory;
 
 public class InicioFrame extends JFrame {
     private final ContaBancaria minhaConta = new ContaBancaria();
-
+    
+    JLabel tituloLabel = new JLabel("Gerenciador de Conta");
     JButton saldoButton = new JButton("Saldo");
-    JButton depositoButton = new JButton("Deposito");
+    JButton depositoButton = new JButton("Depósito");
     JButton sacarButton = new JButton("Sacar");
-
-    JLabel saldoLabel = new JLabel();
-    JLabel depositoLabel = new JLabel();
-    JLabel sacarLabel = new JLabel();
 
     public InicioFrame(String titulo){
         super(titulo);
-        setSize(300, 300);
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridBagLayout());
-        adicionarComponentes();
+        setResizable(false);
+
+        JPanel painel = new JPanel(new GridBagLayout());
+        painel.setBorder(BorderFactory.createEmptyBorder(20, 30, 20, 30));
+        add(painel);
+
+        adicionarComponentes(painel);
 
         saldoButton.addActionListener(e -> {
             SaldoFrame saldoFrame = new SaldoFrame("Saldo", minhaConta);
@@ -31,7 +38,7 @@ public class InicioFrame extends JFrame {
         });
 
         depositoButton.addActionListener(e -> {
-            DepositoFrame depositoFrame = new DepositoFrame("Deposito", minhaConta);
+            DepositoFrame depositoFrame = new DepositoFrame("Depósito", minhaConta);
             depositoFrame.setVisible(true);
         });
 
@@ -40,34 +47,29 @@ public class InicioFrame extends JFrame {
             saqueFrame.setVisible(true);
         });
 
+        pack();
         setLocationRelativeTo(null);
     }
 
-    public void adicionarComponentes(){
+    public void adicionarComponentes(JPanel painel){
         GridBagConstraints cF = new GridBagConstraints();
+        cF.insets = new Insets(8, 8, 8, 8);
+        cF.fill = GridBagConstraints.HORIZONTAL;
+
+        tituloLabel.setFont(new Font("Arial", Font.BOLD, 18));
 
         cF.gridx = 0;
+        cF.gridy = 0;
+        cF.gridwidth = 1;
+        painel.add(tituloLabel, cF);
+
         cF.gridy = 1;
-        add(saldoLabel, cF);
+        painel.add(saldoButton, cF);
 
-        cF.gridx = 1;
-        cF.gridy = 1;
-        add(saldoButton, cF);
-
-        cF.gridx = 0;
         cF.gridy = 2;
-        add(depositoLabel, cF);
+        painel.add(depositoButton, cF);
 
-        cF.gridx = 1;
-        cF.gridy = 2;
-        add(depositoButton, cF);
-
-        cF.gridx = 0;
         cF.gridy = 3;
-        add(sacarLabel, cF);
-
-        cF.gridx = 1;
-        cF.gridy = 3;
-        add(sacarButton, cF);
+        painel.add(sacarButton, cF);
     }
 }
