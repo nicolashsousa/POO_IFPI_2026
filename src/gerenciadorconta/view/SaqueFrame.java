@@ -1,4 +1,6 @@
-package gerenciadorconta;
+package gerenciadorconta.view;
+
+import gerenciadorconta.model.ContaBancaria;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
