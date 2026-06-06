@@ -32,16 +32,24 @@ public class DepositoFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     double valor = Double.parseDouble(depositoField.getText());
+                    if (valor > 0) {
+                        contaVinculada.depositar(valor);
 
-                    contaVinculada.depositar(valor);
-
-                    JOptionPane.showMessageDialog(null,
-                            "Depósito de "+valor+" R$ realizado com sucesso!");
-                    depositoField.setText("");
-                    dispose();
+                        JOptionPane.showMessageDialog(null,
+                                "Depósito de "+valor+" R$ realizado com sucesso!");
+                        depositoField.setText("");
+                        dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(null,
+                                "Digite um valor maior que zero.",
+                                "Erro", JOptionPane.ERROR_MESSAGE);
+                        depositoField.setText("");
+                    }
                 } catch (NumberFormatException ex){
                     JOptionPane.showMessageDialog(null,
-                            "Por favor, digite apenas números.", "Erro", JOptionPane.ERROR_MESSAGE);
+                            "Por favor, digite apenas números.",
+                            "Erro", JOptionPane.ERROR_MESSAGE);
+                    depositoField.setText("");
                 }
             }
         });

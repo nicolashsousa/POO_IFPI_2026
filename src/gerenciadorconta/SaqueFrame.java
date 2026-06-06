@@ -26,15 +26,24 @@ public class SaqueFrame extends JFrame {
                 try {
                     double valor = Double.parseDouble(saqueField.getText());
 
-                    contaVinculada.sacar(valor);
+                    boolean saqueRealizado = contaVinculada.sacar(valor);
 
-                    JOptionPane.showMessageDialog(null,
-                            "Saque de "+valor+" R$ realizado com sucesso!");
-                    saqueField.setText("");
-                    dispose();
+                    if (saqueRealizado) {
+                        JOptionPane.showMessageDialog(null,
+                                "Saque de " + valor + " R$ realizado com sucesso!");
+                        saqueField.setText("");
+                        dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(null,
+                                "Saldo insuficiente ou valor inválido para saque.",
+                                "Erro", JOptionPane.ERROR_MESSAGE);
+                        saqueField.setText("");
+                    }
                 } catch (NumberFormatException ex){
                     JOptionPane.showMessageDialog(null,
-                            "Por favor, digite apenas números.", "Erro", JOptionPane.ERROR_MESSAGE);
+                            "Por favor, digite apenas números.",
+                            "Erro", JOptionPane.ERROR_MESSAGE);
+                    saqueField.setText("");
                 }
             }
         });
@@ -56,7 +65,6 @@ public class SaqueFrame extends JFrame {
         cQ.gridx = 0;
         cQ.gridy = 2;
         add(okButton, cQ);
-        okButton.addActionListener(e -> dispose());
 
         cQ.gridx = 1;
         cQ.gridy = 2;
