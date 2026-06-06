@@ -1,4 +1,6 @@
-package gerenciadorconta;
+package gerenciadorconta.view;
+
+import gerenciadorconta.model.ContaBancaria;
 
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;

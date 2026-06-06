@@ -1,4 +1,4 @@
-package gerenciadorconta;
+package gerenciadorconta.model;
 
 public class ContaBancaria {
     private double saldo;

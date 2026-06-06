@@ -1,12 +1,6 @@
-package gerenciadorconta;
+package gerenciadorconta.view;
 
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import java.awt.Font;
-import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import gerenciadorconta.model.ContaBancaria;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,16 +10,24 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.BorderFactory;
 
-public class DepositoFrame extends JFrame {
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import java.awt.Font;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class SaqueFrame extends JFrame {
     private final ContaBancaria contaVinculada;
 
-    JLabel tituloLabel = new JLabel("Realizar Depósito");
-    JLabel depositoLabel = new JLabel("Valor:");
-    JTextField depositoField = new JTextField(10);
+    JLabel tituloLabel = new JLabel("Realizar Saque");
+    JLabel saqueLabel = new JLabel("Valor:");
+    JTextField saqueField = new JTextField(10);
     JButton okButton = new JButton("OK");
     JButton cancelButton = new JButton("Cancelar");
 
-    public DepositoFrame(String titulo, ContaBancaria conta){
+    public SaqueFrame(String titulo, ContaBancaria conta){
         super(titulo);
         this.contaVinculada = conta;
 
@@ -42,28 +44,28 @@ public class DepositoFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    double valor = Double.parseDouble(depositoField.getText().replace(",", "."));
+                    double valor = Double.parseDouble(saqueField.getText().replace(",", "."));
 
-                    if (valor > 0) {
-                        contaVinculada.depositar(valor);
+                    boolean saqueRealizado = contaVinculada.sacar(valor);
 
+                    if (saqueRealizado) {
                         JOptionPane.showMessageDialog(null,
-                                "Depósito de " + String.format("R$ %.2f", valor) + " realizado com sucesso!");
-                        depositoField.setText("");
+                                "Saque de " + String.format("R$ %.2f", valor) + " realizado com sucesso!");
+                        saqueField.setText("");
                         dispose();
                     } else {
                         JOptionPane.showMessageDialog(null,
-                                "Digite um valor maior que zero.",
+                                "Saldo insuficiente ou valor inválido.",
                                 "Erro",
                                 JOptionPane.ERROR_MESSAGE);
-                        depositoField.setText("");
+                        saqueField.setText("");
                     }
                 } catch (NumberFormatException ex){
                     JOptionPane.showMessageDialog(null,
                             "Por favor, digite apenas números.",
                             "Erro",
                             JOptionPane.ERROR_MESSAGE);
-                    depositoField.setText("");
+                    saqueField.setText("");
                 }
             }
         });
@@ -75,34 +77,34 @@ public class DepositoFrame extends JFrame {
     }
 
     public void adicionarComponentes(JPanel painel){
-        GridBagConstraints cD = new GridBagConstraints();
-        cD.insets = new Insets(8, 8, 8, 8);
-        cD.fill = GridBagConstraints.HORIZONTAL;
+        GridBagConstraints cQ = new GridBagConstraints();
+        cQ.insets = new Insets(8, 8, 8, 8);
+        cQ.fill = GridBagConstraints.HORIZONTAL;
 
         tituloLabel.setFont(new Font("Arial", Font.BOLD, 16));
         okButton.setPreferredSize(new Dimension(100, 30));
         cancelButton.setPreferredSize(new Dimension(100, 30));
 
-        cD.gridx = 0;
-        cD.gridy = 0;
-        cD.gridwidth = 2;
-        painel.add(tituloLabel, cD);
+        cQ.gridx = 0;
+        cQ.gridy = 0;
+        cQ.gridwidth = 2;
+        painel.add(tituloLabel, cQ);
 
-        cD.gridwidth = 1;
-        cD.gridx = 0;
-        cD.gridy = 1;
-        painel.add(depositoLabel, cD);
+        cQ.gridwidth = 1;
+        cQ.gridx = 0;
+        cQ.gridy = 1;
+        painel.add(saqueLabel, cQ);
 
-        cD.gridx = 1;
-        cD.gridy = 1;
-        painel.add(depositoField, cD);
+        cQ.gridx = 1;
+        cQ.gridy = 1;
+        painel.add(saqueField, cQ);
 
-        cD.gridx = 0;
-        cD.gridy = 2;
-        painel.add(okButton, cD);
+        cQ.gridx = 0;
+        cQ.gridy = 2;
+        painel.add(okButton, cQ);
 
-        cD.gridx = 1;
-        cD.gridy = 2;
-        painel.add(cancelButton, cD);
+        cQ.gridx = 1;
+        cQ.gridy = 2;
+        painel.add(cancelButton, cQ);
     }
 }
