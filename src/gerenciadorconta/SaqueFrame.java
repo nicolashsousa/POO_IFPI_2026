@@ -56,12 +56,14 @@ public class SaqueFrame extends JFrame {
                                 "Saldo insuficiente ou valor inválido.",
                                 "Erro",
                                 JOptionPane.ERROR_MESSAGE);
+                        saqueField.setText("");
                     }
                 } catch (NumberFormatException ex){
                     JOptionPane.showMessageDialog(null,
                             "Por favor, digite apenas números.",
                             "Erro",
                             JOptionPane.ERROR_MESSAGE);
+                    saqueField.setText("");
                 }
             }
         });

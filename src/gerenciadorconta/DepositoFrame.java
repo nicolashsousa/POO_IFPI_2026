@@ -56,12 +56,14 @@ public class DepositoFrame extends JFrame {
                                 "Digite um valor maior que zero.",
                                 "Erro",
                                 JOptionPane.ERROR_MESSAGE);
+                        depositoField.setText("");
                     }
                 } catch (NumberFormatException ex){
                     JOptionPane.showMessageDialog(null,
                             "Por favor, digite apenas números.",
                             "Erro",
                             JOptionPane.ERROR_MESSAGE);
+                    depositoField.setText("");
                 }
             }
         });
